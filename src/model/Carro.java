@@ -1,3 +1,5 @@
+package model;
+
 public class Carro extends Vehiculo {
 
     private final int nuemeroDePuertas;

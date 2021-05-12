@@ -1,3 +1,6 @@
+import Factory.VehiculoFactory;
+import model.*;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

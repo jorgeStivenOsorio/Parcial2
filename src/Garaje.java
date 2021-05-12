@@ -1,3 +1,5 @@
+import model.Vehiculo;
+
 import java.util.Scanner;
 
 public class Garaje {
@@ -12,7 +14,7 @@ public class Garaje {
         for (int i = 0; i < garaje.length; i++) {
             if (garaje[i] == null) {
                 garaje[i] = vehiculo;
-                System.out.println("¡Vehiculo agregado exitosamente!");
+                System.out.println("¡model.Vehiculo agregado exitosamente!");
                 break;
             }
         }

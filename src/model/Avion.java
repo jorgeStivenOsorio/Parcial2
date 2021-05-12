@@ -1,3 +1,5 @@
+package model;
+
 public class Avion extends Vehiculo {
 
     private final int altitud;

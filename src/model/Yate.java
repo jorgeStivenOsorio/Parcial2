@@ -1,3 +1,5 @@
+package model;
+
 public class Yate extends Vehiculo {
 
     private final int pesoMaximo;

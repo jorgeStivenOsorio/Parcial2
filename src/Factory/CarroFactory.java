@@ -1,3 +1,7 @@
+package Factory;
+
+import model.*;
+
 public class CarroFactory implements VehiculoFactory {
 
     @Override

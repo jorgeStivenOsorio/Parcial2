@@ -19,9 +19,9 @@ public class Menu {
                 "* Seleccione el tipo de vehiculo a agregar:       *\n" +
                 "***************************************************\n" +
                 "*                                                 *\n" +
-                "* 1) Avion                                        *\n" +
-                "* 2) Yate                                         *\n" +
-                "* 3) Carro                                        *\n" +
+                "* 1) model.Avion                                        *\n" +
+                "* 2) model.Yate                                         *\n" +
+                "* 3) model.Carro                                        *\n" +
                 "* 4) Salir                                        *\n" +
                 "***************************************************\n");
     }

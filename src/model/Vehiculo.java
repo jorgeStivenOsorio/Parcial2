@@ -1,3 +1,5 @@
+package model;
+
 public class Vehiculo {
 
     private final String referencia;
@@ -25,7 +27,7 @@ public class Vehiculo {
 
     @Override
     public String toString() {
-        return "Color: " + getColor() + "\n" +
+        return "model.Color: " + getColor() + "\n" +
                 "Referencia: " + getReferencia() + "\n" +
                 "Velocidad maxima: " + getVelocidadMaxima() + "\n";
     }
