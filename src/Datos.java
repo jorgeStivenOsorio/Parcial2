@@ -1,69 +1,45 @@
 import model.*;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 public class Datos extends Menu {
-    Scanner sc = new Scanner(System.in);
     Color color;
 
-
     public Garaje datosOpcionAgregar(Garaje garaje) {
-        int opcion;
-        boolean salir = true;
-        do {
-            try {
-                showMenuVehiculos();
-                opcion = sc.nextInt();
-                sc.nextLine();
-                switch (opcion) {
-                    case 1 -> garaje.AgregarAvion();
-                    case 2 -> garaje.AgregarYate();
-                    case 3 -> garaje.AgregarCarro();
-                    case 4 -> salir = false;
-                }
-            } catch (InputMismatchException ex) {
-                sc.nextLine();
-                System.out.println("¡El dato ingresado es invalido!");
-            }
 
-        } while (salir);
+            showMenuVehiculos();
+            switch (Validador.validarOpcion()) {
+                case 1 -> garaje.AgregarAvion();
+                case 2 -> garaje.AgregarYate();
+                case 3 -> garaje.AgregarCarro();
+                case 4 -> {}
+                case 5 -> System.out.println("El valor ingresado no es admitido.");
+            }
         return garaje;
     }
 
 
     public Vehiculo RecolectorDeDatos(int opcion) {
         int extra;
-        String referencia = "";
-        while (referencia.equals("")) {
-            System.out.println("Ingrese la referencia: ");
-            referencia = sc.nextLine();
-        }
-        System.out.println("Ingrese velocidad maxima en Km/h: ");
-        int velMaxima = sc.nextInt();
-        color = OpcionDeColores();
         Vehiculo vehiculo;
+        String referencia;
+        referencia = Validador.recibidorString("Ingrese la referencia: ");
+        int velMaxima = Validador.validarInt("Ingrese velocidad maxima en Km/h: ");
+        color = OpcionDeColores();
         if (opcion == 1) {
-            System.out.println("Ingrese altitud");
-            extra = sc.nextInt();
+            extra = Validador.validarInt("Ingrese altitud");
             vehiculo = new Avion.AvionBuilder(referencia, velMaxima, extra, color);
         } else if (opcion == 2) {
-            System.out.println("Ingrese el peso maximo en Kg: ");
-            extra = sc.nextInt();
+            extra = Validador.validarInt("Ingrese el peso maximo en Kg: ");
             vehiculo = new Yate.YateBuilder(referencia, velMaxima, extra, color);
         } else {
-            System.out.println("Ingrese numero de puertas: ");
-            extra = sc.nextInt();
+            extra = Validador.validarInt("Ingrese numero de puertas: ");
             vehiculo = new Carro.CarroBuilder(referencia, velMaxima, extra, color);
         }
-        sc.nextLine();
         return (vehiculo);
     }
 
     public Color OpcionDeColores() {
         boolean salir = true;
         do {
-            try {
                 System.out.println("""
                         Seleccione el color:\s
                         1) NEGRO
@@ -72,9 +48,7 @@ public class Datos extends Menu {
                         4) VERDE
                         5) GRIS
                         """);
-                int opcion3 = sc.nextInt();
-                sc.nextLine();
-                switch (opcion3) {
+                switch (Validador.validarOpcion()) {
                     case 1 -> {
                         color = Color.NEGRO;
                         salir = false;
@@ -98,10 +72,6 @@ public class Datos extends Menu {
                     default -> System.out.println("El dato ingresado no es valido");
                 }
 
-            } catch (InputMismatchException ex) {
-                sc.nextLine();
-                System.out.println("¡El caracter ingresado no es valido!");
-            }
         } while (salir);
         return color;
     }
