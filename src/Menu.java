@@ -1,29 +1,33 @@
 public class Menu {
 
     public final void showMenuPrincipal() {
-        System.out.println("***************************************************\n" +
-                "*                                                 *\n" +
-                "*              BIENVENIDO AL GARAJE               *\n" +
-                "*                                                 *\n" +
-                "***************************************************\n" +
-                "*                                                 *\n" +
-                "* Que accion desea realizar:                      *\n" +
-                "* 1) Agregar vehiculo                             *\n" +
-                "* 2) Mostrar garaje                               *\n" +
-                "* 3) Salir                                        *\n" +
-                "***************************************************\n");
+        System.out.println("""
+                ***************************************************
+                *                                                 *
+                *              BIENVENIDO AL GARAJE               *
+                *                                                 *
+                ***************************************************
+                *                                                 *
+                * Que accion desea realizar:                      *
+                * 1) Agregar vehiculo                             *
+                * 2) Mostrar garaje                               *
+                * 3) Salir                                        *
+                ***************************************************
+                """);
     }
 
     public final void showMenuVehiculos() {
-        System.out.println("***************************************************\n" +
-                "* Seleccione el tipo de vehiculo a agregar:       *\n" +
-                "***************************************************\n" +
-                "*                                                 *\n" +
-                "* 1) model.Avion                                        *\n" +
-                "* 2) model.Yate                                         *\n" +
-                "* 3) model.Carro                                        *\n" +
-                "* 4) Salir                                        *\n" +
-                "***************************************************\n");
+        System.out.println("""
+                ***************************************************
+                * Seleccione el tipo de vehiculo a agregar:       *
+                ***************************************************
+                *                                                 *
+                * 1) Avion                                        *
+                * 2) Yate                                         *
+                * 3) Carro                                        *
+                * 4) Salir                                        *
+                ***************************************************
+                """);
     }
 
 

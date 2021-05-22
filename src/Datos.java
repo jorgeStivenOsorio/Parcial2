@@ -1,4 +1,3 @@
-import Factory.VehiculoFactory;
 import model.*;
 
 import java.util.InputMismatchException;
@@ -7,10 +6,6 @@ import java.util.Scanner;
 public class Datos extends Menu {
     Scanner sc = new Scanner(System.in);
     Color color;
-    private int velMaxima;
-    private int extra;
-    private Vehiculo vehiculo;
-    private VehiculoFactory Vf;
 
 
     public Garaje datosOpcionAgregar(Garaje garaje) {
@@ -18,25 +13,14 @@ public class Datos extends Menu {
         boolean salir = true;
         do {
             try {
-                boolean estado = garaje.EstadoDelGarage();
-                if (estado == true) {
-                    showMenuVehiculos();
-                    opcion = sc.nextInt();
-                    sc.nextLine();
-                    switch (opcion) {
-                        case 1:
-                            garaje.AgregarAvion();
-                            break;
-                        case 2:
-                            garaje.AgregarYate();
-                            break;
-                        case 3:
-                            garaje.AgregarCarro();
-                            break;
-                        case 4:
-                            salir = false;
-                            break;
-                    }
+                showMenuVehiculos();
+                opcion = sc.nextInt();
+                sc.nextLine();
+                switch (opcion) {
+                    case 1 -> garaje.AgregarAvion();
+                    case 2 -> garaje.AgregarYate();
+                    case 3 -> garaje.AgregarCarro();
+                    case 4 -> salir = false;
                 }
             } catch (InputMismatchException ex) {
                 sc.nextLine();
@@ -48,15 +32,17 @@ public class Datos extends Menu {
     }
 
 
-    public Vehiculo Datos(int opcion) {
+    public Vehiculo RecolectorDeDatos(int opcion) {
+        int extra;
         String referencia = "";
-        while (referencia == "") {
+        while (referencia.equals("")) {
             System.out.println("Ingrese la referencia: ");
             referencia = sc.nextLine();
         }
         System.out.println("Ingrese velocidad maxima en Km/h: ");
-        velMaxima = sc.nextInt();
+        int velMaxima = sc.nextInt();
         color = OpcionDeColores();
+        Vehiculo vehiculo;
         if (opcion == 1) {
             System.out.println("Ingrese altitud");
             extra = sc.nextInt();
@@ -78,38 +64,38 @@ public class Datos extends Menu {
         boolean salir = true;
         do {
             try {
-                System.out.println("Seleccione el color: \n" +
-                        "1) NEGRO\n" +
-                        "2) BLANCO\n" +
-                        "3) AZUL\n" +
-                        "4) VERDE\n" +
-                        "5) GRIS\n");
+                System.out.println("""
+                        Seleccione el color:\s
+                        1) NEGRO
+                        2) BLANCO
+                        3) AZUL
+                        4) VERDE
+                        5) GRIS
+                        """);
                 int opcion3 = sc.nextInt();
                 sc.nextLine();
                 switch (opcion3) {
-                    case 1:
+                    case 1 -> {
                         color = Color.NEGRO;
                         salir = false;
-                        break;
-                    case 2:
+                    }
+                    case 2 -> {
                         color = Color.BLANCO;
                         salir = false;
-                        break;
-                    case 3:
+                    }
+                    case 3 -> {
                         color = Color.AZUL;
                         salir = false;
-                        break;
-                    case 4:
+                    }
+                    case 4 -> {
                         color = Color.VERDE;
                         salir = false;
-                        break;
-                    case 5:
+                    }
+                    case 5 -> {
                         color = Color.GRIS;
                         salir = false;
-                        break;
-                    default:
-                        System.out.println("El dato ingresado no es valido");
-                        break;
+                    }
+                    default -> System.out.println("El dato ingresado no es valido");
                 }
 
             } catch (InputMismatchException ex) {

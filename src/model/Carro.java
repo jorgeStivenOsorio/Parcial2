@@ -1,8 +1,9 @@
 package model;
 
+
 public class Carro extends Vehiculo {
 
-    private final int nuemeroDePuertas;
+    private final  int nuemeroDePuertas;
 
     public Carro(String referencia, int velocidadMaxima, int nuemeroDePuertas, Color color) {
         super(referencia, velocidadMaxima, color);
@@ -24,9 +25,7 @@ public class Carro extends Vehiculo {
             return this;
         }
 
-        public Carro build() {
-            return new Carro(super.getReferencia(), super.getVelocidadMaxima(), nuemeroDePuertas, super.getColor());
-        }
+        public Carro build() { return new Carro(super.getReferencia(), super.getVelocidadMaxima(), nuemeroDePuertas, super.getColor()); }
 
         @Override
         public String toString() {
@@ -36,5 +35,6 @@ public class Carro extends Vehiculo {
                     "---------------------------------------------------\n";
         }
     }
+
 
 }
