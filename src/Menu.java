@@ -2,17 +2,22 @@ public class Menu {
 
     public final void showMenuPrincipal() {
         System.out.println("""
-                ***************************************************
-                *                                                 *
-                *              BIENVENIDO AL GARAJE               *
-                *                                                 *
-                ***************************************************
-                *                                                 *
-                * Que accion desea realizar:                      *
-                * 1) Agregar vehiculo                             *
-                * 2) Mostrar garaje                               *
-                * 3) Salir                                        *
-                ***************************************************
+                ****************************************************************
+                *                                                              *
+                *              BIENVENIDO AL GARAJE                            *
+                *                                                              *
+                ****************************************************************
+                *                                                              *
+                * Que accion desea realizar:                                   *
+                * 1) Agregar vehiculo.                                         *
+                * 2) Mostrar garaje.                                           *
+                * 3) Vehiculo mas rapido.                                      *
+                * 4) Vehiculo mas lento.                                       *
+                * 5) Ordenar los vehiculos del mas rapido al mas lento.        *
+                * 6) Mostrar vehiculos negros y azules.                        *
+                * 7) Concatenar las referencias de vehiculos BLANCOS y Verdes. *
+                * 8) Salir.                                                    *
+                ****************************************************************
                 """);
     }
 
