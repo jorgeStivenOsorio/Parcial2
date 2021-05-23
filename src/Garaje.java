@@ -1,23 +1,22 @@
+import model.Color;
 import model.Vehiculo;
-
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Garaje {
     Set<Vehiculo>garaje = new HashSet<>();
     Datos datos = new Datos();
 
     public void ingresarVehiculoAlGaraje(int opcion) {
-        Vehiculo vehiculo = datos.RecolectorDeDatos(opcion);
+        Vehiculo vehiculo = datos.recolectorDeDatos(opcion);
         garaje.add(vehiculo);
         System.out.println("¡Vehiculo agregado exitosamente!");
     }
 
-    public void AgregarAvion() { ingresarVehiculoAlGaraje(1); }
+    public void agregarAvion() { ingresarVehiculoAlGaraje(1); }
 
-    public void AgregarYate() { ingresarVehiculoAlGaraje(2); }
+    public void agregarYate() { ingresarVehiculoAlGaraje(2); }
 
-    public void AgregarCarro() { ingresarVehiculoAlGaraje(3); }
+    public void agregarCarro() { ingresarVehiculoAlGaraje(3); }
 
     public void mostrarGaraje() {
         if (garaje.isEmpty()){
@@ -26,6 +25,16 @@ public class Garaje {
             garaje.forEach(System.out::println);
         }
     }
+
+    public void vehiculoMasRapido(){garaje.stream().max(Comparator.comparing(Vehiculo::getVelocidadMaxima)).stream().forEach(System.out::println);}
+    public void vehiculoMasLento(){garaje.stream().min(Comparator.comparing(Vehiculo::getVelocidadMaxima)).stream().forEach(System.out::println);}
+    public void ordenarVehiculos(){garaje.stream().sorted((p1, p2) -> p2.getVelocidadMaxima() - p1.getVelocidadMaxima()).forEach(System.out::println);}
+    public void vehiculosNegrosAzules(){ garaje.stream().filter(c -> c.getColor() == Color.NEGRO || c.getColor() == Color.AZUL).forEach(System.out::println); }
+    public void referenciaConcatenada(){
+        String list = garaje.stream().filter(c -> c.getColor() == Color.BLANCO || c.getColor() == Color.VERDE).map(p -> p.getReferencia()).reduce("",(acc, num) -> acc + num);
+        System.out.println(list);
+    }
+
 
 
 }

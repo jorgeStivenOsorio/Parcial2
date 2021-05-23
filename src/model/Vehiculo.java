@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Vehiculo {
 
     private final String referencia;
-    private final int velocidadMaxima;
+    private int velocidadMaxima;
     private final Color color;
 
     public Vehiculo(String referencia, int velocidadMaxima, Color color) {
@@ -26,6 +26,10 @@ public class Vehiculo {
         return color;
     }
 
+    public Vehiculo Vehiculo (Vehiculo p){
+        this.velocidadMaxima = p.getVelocidadMaxima();
+        return p;
+    }
 
     @Override
     public String toString() {
