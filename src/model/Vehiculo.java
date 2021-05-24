@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Vehiculo {
 
     private final String referencia;
-    private int velocidadMaxima;
+    private final int velocidadMaxima;
     private final Color color;
 
     public Vehiculo(String referencia, int velocidadMaxima, Color color) {
@@ -24,11 +24,6 @@ public class Vehiculo {
 
     public Color getColor() {
         return color;
-    }
-
-    public Vehiculo Vehiculo (Vehiculo p){
-        this.velocidadMaxima = p.getVelocidadMaxima();
-        return p;
     }
 
     @Override
@@ -69,9 +64,8 @@ public class Vehiculo {
     public boolean equals(Object o) {
         if (null == o)
             return false;
-        if (!(o instanceof Vehiculo))
+        if (!(o instanceof Vehiculo vehiculo))
             return false;
-        Vehiculo vehiculo = (Vehiculo) o;
         return this.referencia.equals(vehiculo.referencia);
     }
 

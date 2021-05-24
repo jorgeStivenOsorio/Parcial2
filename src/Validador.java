@@ -2,10 +2,10 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Validador{
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
 
     public static int validarOpcion(){
-        int opcion = 0;
+        int opcion;
         try {
             opcion = scanner.nextInt();
         } catch (InputMismatchException ex){
@@ -17,12 +17,11 @@ public class Validador{
 
     public static String recibidorString(String mensaje){
         System.out.println(mensaje);
-        String dato=scanner.nextLine();
-        return dato;
+        return scanner.nextLine();
     }
 
     public static int validarInt(String mensaje){
-        int numero = 0;
+        int numero;
         do {
             System.out.println(mensaje);
             try {

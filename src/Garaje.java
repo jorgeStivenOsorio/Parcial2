@@ -13,17 +13,11 @@ public class Garaje {
         System.out.println("¡Vehiculo agregado exitosamente!");
     }
 
-    public void agregarAvion() {
-        ingresarVehiculoAlGaraje(1);
-    }
+    public void agregarAvion() { ingresarVehiculoAlGaraje(1); }
 
-    public void agregarYate() {
-        ingresarVehiculoAlGaraje(2);
-    }
+    public void agregarYate() { ingresarVehiculoAlGaraje(2); }
 
-    public void agregarCarro() {
-        ingresarVehiculoAlGaraje(3);
-    }
+    public void agregarCarro() { ingresarVehiculoAlGaraje(3); }
 
     public void mostrarGaraje() {
         if (garaje.isEmpty()) {
@@ -33,21 +27,13 @@ public class Garaje {
         }
     }
 
-    public void vehiculoMasRapido() {
-        garaje.stream().max(Comparator.comparing(Vehiculo::getVelocidadMaxima)).ifPresent(System.out::println);
-    }
+    public void vehiculoMasRapido() { garaje.stream().max(Comparator.comparing(Vehiculo::getVelocidadMaxima)).ifPresent(System.out::println); }
 
-    public void vehiculoMasLento() {
-        garaje.stream().min(Comparator.comparing(Vehiculo::getVelocidadMaxima)).ifPresent(System.out::println);
-    }
+    public void vehiculoMasLento() { garaje.stream().min(Comparator.comparing(Vehiculo::getVelocidadMaxima)).ifPresent(System.out::println); }
 
-    public void ordenarVehiculos() {
-        garaje.stream().sorted((p1, p2) -> p2.getVelocidadMaxima() - p1.getVelocidadMaxima()).forEach(System.out::println);
-    }
+    public void ordenarVehiculos() { garaje.stream().sorted((p1, p2) -> p2.getVelocidadMaxima() - p1.getVelocidadMaxima()).forEach(System.out::println); }
 
-    public void vehiculosNegrosAzules() {
-        garaje.stream().filter(c -> c.getColor() == Color.NEGRO || c.getColor() == Color.AZUL).forEach(System.out::println);
-    }
+    public void vehiculosNegrosAzules() { garaje.stream().filter(c -> c.getColor() == Color.NEGRO || c.getColor() == Color.AZUL).forEach(System.out::println); }
 
     public void referenciaConcatenada() {
         String list = garaje.stream().filter(c -> c.getColor() == Color.BLANCO || c.getColor() == Color.VERDE).map(Vehiculo::getReferencia).reduce("", (acc, num) -> acc + num);

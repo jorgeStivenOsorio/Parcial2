@@ -16,13 +16,7 @@ public class OpcionesDelMenu extends Menu {
                     case 6 -> garaje.vehiculosNegrosAzules();
                     case 7 -> garaje.referenciaConcatenada();
                     case 8 -> salir = false;
-
                 }
-
         } while (salir);
-
-
     }
-
-
 }

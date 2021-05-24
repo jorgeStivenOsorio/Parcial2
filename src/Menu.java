@@ -14,8 +14,8 @@ public class Menu {
                 * 3) Vehiculo mas rapido.                                      *
                 * 4) Vehiculo mas lento.                                       *
                 * 5) Ordenar los vehiculos del mas rapido al mas lento.        *
-                * 6) Mostrar vehiculos negros y azules.                        *
-                * 7) Concatenar las referencias de vehiculos BLANCOS y Verdes. *
+                * 6) Mostrar vehiculos NEGROS y AZULES.                        *
+                * 7) Concatenar las referencias de vehiculos BLANCOS y VERDES. *
                 * 8) Salir.                                                    *
                 ****************************************************************
                 """);
